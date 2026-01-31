@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,17 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the sum of all elements in a one-dimensional double-precision floating-point ndarray using an improved Kahan–Babuška algorithm.
+* Computes the sum of all elements in a one-dimensional double-precision floating-point ndarray using an improved Kahan–Babuška algorithm.
 *
-* @module @stdlib/blas-ext-base-ndarray-dsumkbn
+* @param arrays - array-like object containing an input ndarray
+* @returns sum
 *
 * @example
 * var Float64Array = require( '@stdlib/array-float64' );
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var dsumkbn = require( '@stdlib/blas-ext-base-ndarray-dsumkbn' );
 *
 * var xbuf = new Float64Array( [ 1.0, -2.0, 2.0 ] );
 * var x = new ndarray( 'float64', xbuf, [ 3 ], [ 1 ], 0, 'row-major' );
@@ -34,12 +38,9 @@
 * var v = dsumkbn( [ x ] );
 * // returns 1.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dsumkbn( arrays: [ float64ndarray ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dsumkbn;
